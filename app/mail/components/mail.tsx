@@ -31,6 +31,7 @@ import { MailList } from "@/app/mail/components/mail-list"
 import { Nav } from "@/app/mail/components/nav"
 import { type Mail } from "@/app/mail/data"
 import { useMail } from "@/app/mail/use-mail"
+import { signOut } from "next-auth/react"
 
 interface MailProps {
   accounts: {
@@ -174,6 +175,14 @@ export function Mail({
               },
             ]}
           />
+          <div className="flex justify-end mb-4">
+            <button
+              onClick={() => signOut()}
+              className="px-4 py-2 bg-red-500 text-white rounded"
+            >
+              Wyloguj się
+            </button>
+          </div>
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
