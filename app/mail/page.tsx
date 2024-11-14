@@ -41,7 +41,7 @@ export default function MailPage() {
   }, [status])
 
   if (status === "loading") {
-    return <div>Ładowanie...</div>
+    return <div>Ładowanie..</div>
   }
 
   return (
